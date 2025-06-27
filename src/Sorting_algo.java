@@ -14,8 +14,9 @@ public class Sorting_algo {
         System.out.print("Before sorting:");
         System.out.println(Arrays.toString(num));
         System.out.print("After sorting: ");
-        bubble(num);
-        selection(num);
+      //  bubble(num);
+        //selection(num);
+        insertion(num);
 
         System.out.println(Arrays.toString(num));
 
@@ -45,6 +46,18 @@ public class Sorting_algo {
                 int temp = arr[i];
                 arr[i] = arr[min];
                 arr[min] = temp;
+            }
+        }
+    }
+
+    public static void insertion(int[] arr){
+        for (int i = 0; i < arr.length ; i++) {
+            int j=i;
+            while(j>0 && arr[j-1]>arr[j]){
+                int temp = arr[j];
+                arr[j] = arr[j-1];
+                arr[j-1] = temp;
+                j-- ;
             }
         }
     }
