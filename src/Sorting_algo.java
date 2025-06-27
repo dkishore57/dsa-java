@@ -15,6 +15,8 @@ public class Sorting_algo {
         System.out.println(Arrays.toString(num));
         System.out.print("After sorting: ");
         bubble(num);
+        selection(num);
+
         System.out.println(Arrays.toString(num));
 
     }
@@ -30,5 +32,20 @@ public class Sorting_algo {
             }
         }
 
+    }
+
+    public static void selection(int[] arr) {
+
+        for (int i = 0; i < arr.length - 1; i++) {
+            for (int j = i+1; j < arr.length; j++) {
+                int min = i;
+                    if (arr[j] < arr[min]) {
+                        min= j;
+                    }
+                int temp = arr[i];
+                arr[i] = arr[min];
+                arr[min] = temp;
+            }
+        }
     }
 }
