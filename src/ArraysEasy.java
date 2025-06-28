@@ -2,10 +2,11 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
+
 public class ArraysEasy {
     public static void main(String[] args) {
 
-       System.out.print(removeduplicate());
+       System.out.print(maxones());
        //System.out.print(max);
 
     }
@@ -102,6 +103,31 @@ public class ArraysEasy {
         return i+1;
 
     }
+    static int maxones(){
+        Scanner sc = new Scanner(System.in);
+        ArrayList<Integer> arr = new ArrayList<>();
+        System.out.println("Enter numbers (-1 for exit):");
+        while (true) {
+            int num = sc.nextInt();
+            if (num == -1) {
+                break;
+            }
+            arr.add(num);
+        }
 
+        int cunt=0;
+        int max=Integer.MIN_VALUE;
+        for (int i = 0; i < arr.size() ; i++) {
+            if(arr.get(i)==1){
+                cunt+=1;
+            }
+            else{
+                max=Math.max(cunt,max);
+                cunt=0;
+            }
+        }
+        max=Math.max(cunt,max);
+    return max;
+    }
 
 }

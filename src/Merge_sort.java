@@ -1,11 +1,10 @@
+import java.util.ArrayList;
+
 public class Merge_sort {
-
-
-
         public static void merge(int[] arr, int low, int mid, int high) {
             int left = low;
             int right = mid + 1;
-            java.util.ArrayList<Integer> temp = new java.util.ArrayList<>();
+            ArrayList<Integer> temp = new ArrayList<>();
 
             while (left <= mid && right <= high) {
                 if (arr[left] <= arr[right]) {
@@ -33,10 +32,9 @@ public class Merge_sort {
             }
         }
         public static void main(String[] args) {
-            int[] arr = {5, 2, 4, 1, 3};
+            int[] arr = {5, 2, 4, 1, 3, 100 , 100 , 109 , 108, 10  };
 
             mergeSort(arr, 0, arr.length - 1);
-
             for (int num : arr) {
                 System.out.print(num + " ");
             }
