@@ -18,6 +18,7 @@ public class Sorting_algo {
         //selection(num);
         insertion(num);
 
+
         System.out.println(Arrays.toString(num));
 
     }
@@ -61,4 +62,6 @@ public class Sorting_algo {
             }
         }
     }
+
+
 }
