@@ -1,12 +1,13 @@
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.Scanner;
 
 
 public class ArraysEasy {
     public static void main(String[] args) {
 
-       System.out.print(maxones());
+        longestSubarray();
        //System.out.print(max);
 
     }
@@ -126,5 +127,30 @@ public class ArraysEasy {
         max=Math.max(cunt,max);
     return max;
     }
+    public static void  longestSubarray() {
+        int[] nums = {1,2,3,1,1,1,1,6};
+        int k=6;
+            HashMap<Integer,Integer> dk = new HashMap<>();
+            int len=0;
+            int sum=0;
+            for(int i=0;i<nums.length;i++){
+                sum+=nums[i];
+
+                if(sum==k){
+                    len=Math.max(len,i+1);
+                }
+                int rem = sum-k;
+                if(dk.containsKey(rem)){
+                    int size=i-dk.get(rem);
+                    len=Math.max(size,len);
+                }
+                if(!dk.containsKey(sum)){
+                    dk.put(sum,i);
+                }
+
+            }
+        System.out.println(len);
+
+        }
 
 }
