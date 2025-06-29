@@ -37,7 +37,6 @@ public class ArraysEasy {
 
 
     }
-
     static int max() {
         Scanner sc = new Scanner(System.in);
         ArrayList<Integer> arr = new ArrayList<>();
@@ -57,7 +56,6 @@ public class ArraysEasy {
         }
         return maxele;
     }
-
     static boolean checksort(){
         Scanner sc = new Scanner(System.in);
         ArrayList<Integer> arr = new ArrayList<>();
@@ -79,7 +77,6 @@ public class ArraysEasy {
             return true;
 
     }
-
     static int removeduplicate(){
         Scanner sc = new Scanner(System.in);
         ArrayList<Integer> arr = new ArrayList<>();

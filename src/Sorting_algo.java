@@ -1,25 +1,22 @@
 import java.util.Arrays;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Sorting_algo {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Enter the no elements:");
-        int n = sc.nextInt();
-        int[] num = new int[n];
-        System.out.print("Enter " + n + " elements:");
-        for (int i = 0; i < n; i++) {
-            num[i] = sc.nextInt();
+        int[] arr = new int[100000];  // Create array of size 500
+        Random rand = new Random();
+
+        // Fill array with random numbers between 0 and 999
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = rand.nextInt(1000);  // any range you want
         }
-        System.out.print("Before sorting:");
-        System.out.println(Arrays.toString(num));
-        System.out.print("After sorting: ");
-      //  bubble(num);
-        //selection(num);
-        insertion(num);
-
-
-        System.out.println(Arrays.toString(num));
+        long startTime = System.nanoTime();
+        insertion(arr);
+       // System.out.println(Arrays.toString(arr));
+        long endTime = System.nanoTime();
+        double durationInSeconds = (endTime - startTime) / 1_000_000_000.0;
+        System.out.println("Time taken: " + durationInSeconds + " seconds");
 
     }
 
